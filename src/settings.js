@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue',
+  title: 'OneSite',
 
   /**
    * @type {boolean} true | false
