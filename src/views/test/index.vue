@@ -14,19 +14,11 @@
         />
       </div>
       <div style="margin-top: 20px">
-        <el-row :gutter="24">
-          <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
-            <el-input
-              v-model="inputMessage"
-              class="edit-input-block"
-              type="textarea"
-              resize="none"
-            />
-          </el-col>
-          <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4">
-            <el-button type="primary" @click="sendMessage()">发送</el-button>
-          </el-col>
-        </el-row>
+        <el-input
+          v-model="inputMessage"
+          class="edit-input-block"
+          @keyup.enter.native="sendMessage()"
+        />
       </div>
     </el-card>
   </div>
