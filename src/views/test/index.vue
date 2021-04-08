@@ -53,15 +53,16 @@ export default {
   },
   methods: {
     initConnection() {
-      let host = location.host
-      if (host.search('localhost') >= 0) {
-        host = '127.0.0.1:8000'
-      }
-      let protocol = 'wss'
-      if (location.protocol === 'http:') {
-        protocol = 'ws'
-      }
-      this.conn = new WebSocket(`${protocol}://${host}/ws/v1/chat?token=${this.token}`);
+      // let host = location.host
+      // if (host.search('localhost') >= 0) {
+      //   host = '127.0.0.1:8000'
+      // }
+      // let protocol = 'wss'
+      // if (location.protocol === 'http:') {
+      //   protocol = 'ws'
+      // }
+      // this.conn = new WebSocket(`${protocol}://${host}/ws/v1/chat?token=${this.token}`);
+      this.conn = new WebSocket(`wss://pipages.byherui.com/ws/v1/chat?token=${this.token}`);
       this.conn.onOpen = this.onConnectionOpen;
       this.conn.onmessage = this.onConnectionMessage;
       this.conn.onClose = this.onConnectionClose;
