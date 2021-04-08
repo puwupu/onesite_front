@@ -47,7 +47,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       getInfo()
         .then(response => {
-          const { data } = response;
+          const { data } = response.data;
 
           if (!data) {
             reject("Verification failed, please Login again.");
